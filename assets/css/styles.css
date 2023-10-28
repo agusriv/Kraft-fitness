@@ -461,6 +461,23 @@ img {
   opacity: 1;
 }
 
+.time__list{
+  row-gap: 1rem;
+  margin-top: 1rem;
+}
+
+.time__item{
+  display: flex;
+  column-gap: .5rem;
+  align-items: center;
+  font-size: var(--small-font-size);
+}
+
+.time__item i{
+  font-size: 1.25rem;
+  color: var(--first-color);
+}
+
 /*=============== CHOOSE ===============*/
 .choose{
   padding-bottom: 0;
