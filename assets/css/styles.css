@@ -453,8 +453,13 @@ img {
 }
 
 .program__card:hover .program__title,
-.program__card:hover .program__description{
+.program__card:hover .program__description,
+.program__card:hover .time__list{
   color: var(--title-color-black);
+}
+
+.program__card:hover .time__list i{
+  color: hsl(114, 71%, 21%);
 }
 
 .program__card:hover .program__button{
@@ -462,8 +467,9 @@ img {
 }
 
 .time__list{
+  display: grid;
   row-gap: 1rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .time__item{
