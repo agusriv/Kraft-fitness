@@ -39,7 +39,25 @@ const scrollHeader = () =>{
 window.addEventListener('scroll', scrollHeader)
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+const sections = document.querySelectorAll('section[id]')
+    
+const scrollActive = () =>{
+  	const scrollDown = window.scrollY
 
+	sections.forEach(current =>{
+		const sectionHeight = current.offsetHeight,
+			  sectionTop = current.offsetTop - 58,
+			  sectionId = current.getAttribute('id'),
+			  sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
+
+		if(scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight){
+			sectionsClass.classList.add('active-link')
+		}else{
+			sectionsClass.classList.remove('active-link')
+		}                                                    
+	})
+}
+window.addEventListener('scroll', scrollActive)
 
 /*=============== SHOW SCROLL UP ===============*/ 
 
@@ -100,4 +118,48 @@ const calculateBmi = (e) =>{
 }
 
 calculateForm.addEventListener('submit', calculateBmi)
+
 /*=============== EMAIL JS ===============*/
+const contactForm = document.getElementById('contact-form'),
+      contactMessage = document.getElementById('contact-message'),
+      contactUser = document.getElementById('contact-user')
+
+const sendEmail = (e) =>{
+    e.preventDefault()
+
+    // Check if the field has a value
+    if(contactUser.value === ''){
+        // Add and remove color
+        contactMessage.classList.remove('color-green')
+        contactMessage.classList.add('color-red')
+
+        // Show message
+        contactMessage.textContent = 'You must enter your email ☝️'
+
+        // Remove message three seconds
+        setTimeout(() =>{
+            contactMessage.textContent = ''
+        }, 3000)
+    } else{
+        // serviceID - templateID - #form - publicKey
+        emailjs.sendForm('service_matmqdr','template_tucgxl8','#contact-form','CKyk1qsCbiaUEVs9j')
+            .then(() =>{
+                // Show message and add color
+                contactMessage.classList.add('color-green')
+                contactMessage.textContent = 'You registered successfully 💪'
+
+                // Remove message after three seconds
+                setTimeout(() =>{
+                    contactMessage.textContent = ''
+                }, 3000)
+            }, (error) =>{
+                // Mail sending error
+                alert('OOPS! SOMETHING HAS FAILED...', error)
+            })
+
+        // To clear the input field
+        contactUser.value = ''
+    }
+}
+
+contactForm.addEventListener('submit', sendEmail)
