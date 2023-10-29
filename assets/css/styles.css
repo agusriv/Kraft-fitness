@@ -564,6 +564,11 @@ img {
   justify-content: center;
   row-gap: 2rem;
 }
+.pricing__container1{
+  grid-template-columns: 285px;
+  justify-content: center;
+  row-gap: 2rem;
+}
 
 .pricing__card,
 .pricing__shape,
@@ -869,7 +874,7 @@ img {
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-@media screen and (max-width: 340px) {
+@media screen and (max-width: 422px) {
   .container{
     margin-left: 1rem;
     margin-right: 1rem;
@@ -894,6 +899,9 @@ img {
   }
 
   .pricing__container{
+    grid-template-columns: 250px;
+  }
+  .pricing__container1{
     grid-template-columns: 250px;
   }
   .pricing__card{
@@ -948,6 +956,10 @@ img {
   .pricing__container{
     grid-template-columns: repeat(2, 285px);
     gap: 2.5rem;
+  }
+  .pricing__container1{
+    grid-template-columns: repeat(2, 285px);
+    gap: 3.5rem;
   }
 
   .calculate__container{
@@ -1140,7 +1152,11 @@ img {
 
   .pricing__container{
     padding-top: 3rem;
-    grid-template-columns: repeat(3, 320px);
+    grid-template-columns: repeat(4, 290px);
+  }
+  .pricing__container1{
+    padding-top: 3rem;
+    grid-template-columns: repeat(3, 350px);
   }
   .pricing__card{
     padding: 2rem 3.5rem;
