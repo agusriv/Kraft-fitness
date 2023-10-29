@@ -98,7 +98,7 @@ const calculateBmi = (e) =>{
         calculateMessage.classList.add('color-red')
 
         // Show message
-        calculateMessage.textContent = 'Fill in the Height and Weight 👨‍💻'
+        calculateMessage.textContent = 'Inserta tú altura y tú peso 👨‍💻'
 
         // Remove message three seconds
         setTimeout(() =>{
@@ -114,13 +114,13 @@ const calculateBmi = (e) =>{
         if(bmi < 18.5){
             // Add color and display message
             calculateMessage.classList.add('color-green')
-            calculateMessage.textContent = `Your BMI is ${bmi} and you are skinny 😔`
+            calculateMessage.textContent = `Tú IMC es ${bmi} y tú estas flaco 😔`
         }else if(bmi < 25){
             calculateMessage.classList.add('color-green')
-            calculateMessage.textContent = `Your BMI is ${bmi} and you are healthy 🥳`
+            calculateMessage.textContent = `Tú IMC es ${bmi} y tú estas saludable 🥳`
         }else{
             calculateMessage.classList.add('color-green')
-            calculateMessage.textContent = `Your BMI is ${bmi} and you are overweight 😔`
+            calculateMessage.textContent = `Tú IMC es ${bmi} y tú tienes sobre peso 😔`
         }
 
         // To clear the input field

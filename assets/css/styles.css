@@ -381,7 +381,7 @@ img {
 
 /*=============== PROGRAM ===============*/
 .program__container{
-  grid-template-columns: 225px;
+  grid-template-columns: 280px;
   justify-content: center;
   row-gap: 2rem;
 }
@@ -929,7 +929,7 @@ img {
   }
 
   .program__container{
-    grid-template-columns: repeat(2, 225px);
+    grid-template-columns: repeat(3, 245px);
     gap: 2.5rem;
   }
 
@@ -1069,6 +1069,11 @@ img {
   .footer__social{
     order: 1;
   }
+
+  .program__container{
+    grid-template-columns: repeat(3, 300px);
+    padding: 3rem 0;
+  }
 }
 
 @media screen and (min-width: 1150px){
@@ -1101,7 +1106,7 @@ img {
   }
 
   .program__container{
-    grid-template-columns: repeat(4, 245px);
+    grid-template-columns: repeat(3, 345px);
     padding: 3rem 0;
   }
   .program__card{
